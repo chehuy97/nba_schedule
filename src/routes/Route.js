@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import GameScreen from '../components/games/GameScreen'
-import StandingScreen from '../components/standing/StandingScreen'
-import StatScreen from '../components/stats/StatScreen';
-import PlayerScreen from '../components/players/PlayerScreen';
+import GameScreen from '../screens/games/GameScreen'
+import StandingScreen from '../screens/standing/StandingScreen'
+import StatScreen from '../screens/stats/StatScreen';
+import PlayerScreen from '../screens/players/PlayerScreen';
 import color from '../constants/Color'
 
 const Tab = createMaterialTopTabNavigator();

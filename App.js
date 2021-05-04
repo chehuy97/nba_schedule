@@ -9,7 +9,6 @@
 import * as React from 'react';
 import Route from './src/routes/Route';
 import { createStackNavigator } from '@react-navigation/stack';
-import PlayerScreen from './src/components/players/PlayerScreen';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import color from './src/constants/Color'
 
