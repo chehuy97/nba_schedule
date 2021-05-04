@@ -8,9 +8,34 @@
 
 import * as React from 'react';
 import Route from './src/routes/Route';
+import { createStackNavigator } from '@react-navigation/stack';
+import PlayerScreen from './src/components/players/PlayerScreen';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import color from './src/constants/Color'
+
+const Stack = createStackNavigator();
 
 export default function App() {
+
+  const MyTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: 'white',
+    },
+  };
+
   return (
-    <Route/>
+    <NavigationContainer theme={MyTheme}>
+      <Stack.Navigator
+        screenOptions={{
+          headerTintColor: 'white',
+          headerStyle: { backgroundColor: color.app_bar }
+        }}>
+        <Stack.Screen
+          name="NBA"
+          component={Route} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
