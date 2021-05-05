@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, FlatList, Image } from 'react-native';
+import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import { scheduleData } from '../../mock/DummyData';
 import ScheduleItem from '../../components/ScheduleCard/ScheduleItem'
 import styles from './GameStyles'
@@ -7,16 +7,17 @@ import styles from './GameStyles'
 const GameScreen = () => {
 
   const renderMatchItem = item => {
-    console.log(item.home_team);
     return (
-      <View style={styles.match_container}>
+      <TouchableOpacity
+      onPress={() => {console.log("touch match")}}>
+        <View style={styles.match_container}>
         <View style={styles.club_container}>
           <View style={styles.club_name_container}>
-            <Image source={require('../../assets/images/houston_rocket_logo.png')} style={styles.club_logo} />
+            <Image source={require('../../assets/images/club_logo/rockets_logo.png')} style={styles.club_logo} />
             <Text style={styles.match_text}>{item.home_team}</Text>
           </View>
           <View style={styles.club_name_container}>
-            <Image source={require('../../assets/images/brooklyn_nets_logo.png')} style={styles.club_logo} />
+            <Image source={require('../../assets/images/club_logo/nets_logo.png')} style={styles.club_logo} />
             <Text style={styles.match_text}>{item.away_team}</Text>
           </View>
         </View>
@@ -29,6 +30,7 @@ const GameScreen = () => {
           <Text>{item.time}</Text>
         </View>
       </View>
+      </TouchableOpacity>
     )
   }
 

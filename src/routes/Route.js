@@ -17,10 +17,10 @@ const Route = navigation => {
                 inactiveTintColor: color.inative_tab,
                 activeTintColor:"white",
                 style: { backgroundColor: color.app_bar },}}>
-                <Tab.Screen name="Game" component={GameScreen} />
+                <Tab.Screen name="Games" component={GameScreen} />
                 <Tab.Screen name="Standing" component={StandingScreen} />
-                <Tab.Screen name="Stat" component={StatScreen} />
-                <Tab.Screen name="Player" component={PlayerScreen} />
+                <Tab.Screen name="Stats" component={StatScreen} />
+                <Tab.Screen name="Players" component={PlayerScreen} />
             </Tab.Navigator>
         // </NavigationContainer>
     );

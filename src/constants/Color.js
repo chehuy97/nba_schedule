@@ -1,4 +1,6 @@
 export default {
-    inative_tab: "#669ac3",
-    app_bar:"#01579b"
+    inative_tab: "#669AC3",
+    app_bar:"#01579B",
+    page_bg: "#F1F3F4"
+
 }
