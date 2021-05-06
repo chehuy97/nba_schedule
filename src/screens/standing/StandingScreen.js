@@ -1,10 +1,10 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
-import { seasons, easternConference, westernConference } from '../../mock/DummyData';
+import { seasons} from '../../mock/DummyData';
 import styles from './StandingStyles'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Conference from '../conference/Conference';
-import { NavigationContainer } from '@react-navigation/native';
+import EasternConference from '../conference/EasternConference';
+import WesternConference from '../conference/WesternConference'
 
 const StandingScreen = () => {
 
@@ -18,8 +18,8 @@ const StandingScreen = () => {
       </View>
       <View style={styles.table_container}>
         <Tab.Navigator>
-          <Tab.Screen name="Eastern Conference" component={Conference} />
-          <Tab.Screen name="Western conference" component={Conference} />
+          <Tab.Screen name="Eastern Conference" component={EasternConference} />
+          <Tab.Screen name="Western conference" component={WesternConference} />
         </Tab.Navigator>
       </View>
     </View>

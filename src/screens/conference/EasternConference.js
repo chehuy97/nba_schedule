@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FlatList, Image, Text, View } from 'react-native'
 import Styles from './Styles'
 import { easternConference } from '../../mock/DummyData'
 
 const Conference = () => {
 
+    useEffect(() => {
+        console.log("Screen 3")
+      });
+
     const render_club_position = item => {
-        console.log(item.name);
         return (
             <View style={Styles.block_club}>
                 <Text style={Styles.number_club}>{item.position}</Text>
                 <View style={Styles.club_container}>
                     <Image
                         style={Styles.logo_size}
-                        source={require('../../assets/images/club_logo/rockets_logo.png')} />
+                        source={{uri: item.image}} />
                     <Text>{item.club_name}</Text>
                 </View>
                 <Text style={Styles.title_text}>{item.win}</Text>

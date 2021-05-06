@@ -24,7 +24,6 @@ const StatScreen = () => {
   }
 
   const render_block_stats = item => {
-    console.log(item[0]);
     return (
       <View style={styles.block_container}>
       <Text style={styles.section_name}>{item.block_name}</Text>
