@@ -4,7 +4,6 @@ import colors from '../../constants/Color'
 
 export default StyleSheet.create({
     block_container:{
-        height: 300,
         backgroundColor:'white',
         paddingHorizontal: 15,
         margin:5,
@@ -26,19 +25,21 @@ export default StyleSheet.create({
     player_card:{
         flexDirection: 'row',
         height:70,
-        borderBottomWidth:0.5
+        borderBottomWidth:0.5,
+        paddingVertical:7
     },
     player_info_card:{
         flex:1,
         flexDirection:'column',
-        justifyContent:'space-around'
+        justifyContent:'space-between'
     },
     team_container:{
         flexDirection:'row',
     },
     team_logo_img:{
-        width:25,
-        height:25
+        width:23,
+        height:23,
+        marginRight:5
     },
     text_stat:{
         fontSize: dimens.normal_size,
