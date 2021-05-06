@@ -8,6 +8,7 @@
 
 import * as React from 'react';
 import Route from './src/routes/Route';
+import PlayerWebView from './src/screens/players/PlayerWebview'
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import color from './src/constants/Color'
@@ -34,6 +35,7 @@ export default function App() {
         <Stack.Screen
           name="NBA"
           component={Route} />
+        <Stack.Screen name="PlayerWebView" component={PlayerWebView}/>  
       </Stack.Navigator>
     </NavigationContainer>
   );
