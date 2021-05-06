@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { seasons, easternConference, westernConference } from '../../mock/DummyData';
 import styles from './StandingStyles'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Conference from './Conference';
+import Conference from '../conference/Conference';
 import { NavigationContainer } from '@react-navigation/native';
 
 const StandingScreen = () => {
