@@ -5,41 +5,10 @@ import ScheduleItem from '../../components/ScheduleCard/ScheduleItem'
 import styles from './GameStyles'
 
 const GameScreen = () => {
-  useEffect(() => {
-    console.log("Screen 1")
-  });
-  const renderMatchItem = item => {
-    return (
-      <TouchableOpacity
-        onPress={() => { console.log("touch match") }}>
-        <View style={styles.match_container}>
-          <View style={styles.club_container}>
-            <View style={styles.club_name_container}>
-              <Image source={{uri:item.image_home}} style={styles.club_logo} />
-              <Text style={styles.match_text}>{item.home_team}</Text>
-            </View>
-            <View style={styles.club_name_container}>
-              <Image source={{uri:item.image_away}} style={styles.club_logo} />
-              <Text style={styles.match_text}>{item.away_team}</Text>
-            </View>
-          </View>
-          <View style={styles.score_container}>
-            <Text style={styles.match_text}>{item.home_score}</Text>
-            <Text style={styles.match_text}>{item.away_score}</Text>
-          </View>
-          <View style={styles.time_container}>
-            <Text>{item.status}</Text>
-            <Text>{item.time}</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
-    )
-  }
-
   return (
     <FlatList
       data={scheduleData}
-      renderItem={({ item }) => renderMatchItem(item)}
+      renderItem={({ item }) => <ScheduleItem data={item} /> }
       keyExtractor={item => item.match_id} />
   );
 }

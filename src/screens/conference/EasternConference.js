@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react'
-import { FlatList, Image, Text, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { FlatList, Image, Text, View, TouchableOpacity } from 'react-native'
 import Styles from './Styles'
 import { easternConference } from '../../mock/DummyData'
 
-const Conference = () => {
+const EasternConference = ({ msg}) => {
 
-    useEffect(() => {
-        console.log("Screen 3")
-      });
+    const [selectedClub, setSelectedClub] = useState(null)
 
+    console.log(msg);
     const render_club_position = item => {
+        let isSelected = (selectedClub != null) && (selectedClub.club_id == item.club_id)
         return (
-            <View style={Styles.block_club}>
+            <TouchableOpacity 
+                onPress={() => {
+                    setSelectedClub(item)
+                }}>
+                <View style={isSelected == true ? Styles.block_club_selected : Styles.block_club }>
                 <Text style={Styles.number_club}>{item.position}</Text>
                 <View style={Styles.club_container}>
                     <Image
@@ -25,6 +29,7 @@ const Conference = () => {
                 <Text style={Styles.title_text}>{item.l10}</Text>
                 <Text style={Styles.title_text}>{item.strk}</Text>
             </View>
+            </TouchableOpacity>
         )
     }
 
@@ -46,4 +51,4 @@ const Conference = () => {
     )
 }
 
-export default Conference
+export default EasternConference

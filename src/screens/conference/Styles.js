@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import Color from '../../constants/Color';
 import dimens from '../../constants/Dimens'
 
 export default StyleSheet.create({
@@ -39,5 +40,13 @@ export default StyleSheet.create({
         alignItems:'center',
         borderBottomWidth:0.5,
         borderBottomColor:'grey'
+    },
+    block_club_selected: {
+        flexDirection:'row',
+        height:40,
+        alignItems:'center',
+        borderBottomWidth:0.5,
+        borderBottomColor:'grey',
+        backgroundColor: Color.light_grey
     },
 })

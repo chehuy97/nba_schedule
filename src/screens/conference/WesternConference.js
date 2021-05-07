@@ -1,18 +1,18 @@
 
 import React, { useEffect } from 'react'
-import { FlatList, Image, Text, View } from 'react-native'
+import { FlatList, Image, Text, View, TouchableOpacity } from 'react-native'
 import Styles from './Styles'
 import { westernConference } from '../../mock/DummyData'
 
 const WesternConference = () => {
 
-    useEffect(() => {
-        console.log("Screen 3")
-      });
-
     const render_club_position = item => {
         return (
-            <View style={Styles.block_club}>
+            <TouchableOpacity 
+                onPress={() => {
+                    console.log("hihi");
+                }}>
+                <View style={Styles.block_club}>
                 <Text style={Styles.number_club}>{item.position}</Text>
                 <View style={Styles.club_container}>
                     <Image
@@ -26,6 +26,7 @@ const WesternConference = () => {
                 <Text style={Styles.title_text}>{item.l10}</Text>
                 <Text style={Styles.title_text}>{item.strk}</Text>
             </View>
+            </TouchableOpacity>
         )
     }
 

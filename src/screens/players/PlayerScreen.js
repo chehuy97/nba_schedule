@@ -6,10 +6,6 @@ import { WebView } from 'react-native-webview'
 
 const PlayerScreen = ({ navigation }) => {
 
-  useEffect(() => {
-    console.log("Screen 2")
-  });
-
   const show_webview_player = name => {
     console.log("click webview");
     navigation.navigate('PlayerWebView',{name: name})
