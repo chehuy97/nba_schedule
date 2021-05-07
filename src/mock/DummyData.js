@@ -702,3 +702,95 @@ export const statsData = [
     },
 
 ]
+
+
+export const nets_match = [
+    {
+        "match_id": 1,
+        "home_team": "Pacers",
+        "away_team": "Nets",
+        "image_home": "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fnba%2F500%2Find.png",
+        "image_away":"https://toppng.com/uploads/preview/download-brooklyn-nets-vector-logo-11573942208mwqjvdaggt.png",
+        "home_score": "113",
+        "away_score": "130",
+        "status": "Final",
+        "time": "Fri, Wed 30"
+    },
+    {
+        "match_id": 2,
+        "home_team": "Nets",
+        "away_team": "Trail Blazers",
+        "image_home": "https://i.pinimg.com/originals/7d/07/ea/7d07eaa72e74a2def63540ac7d55ba0f.png",
+        "image_away":"https://cdn.freelogovectors.net/wp-content/uploads/2018/03/dallas_mavericks_logo.png",
+        "home_score": "109",
+        "away_score": "128",
+        "status": "Final",
+        "time": "Sat, May 1"
+    },
+    {
+        "match_id": 3,
+        "home_team": "Bucks",
+        "away_team": "Nets",
+        "image_home": "https://cdn.freelogovectors.net/wp-content/uploads/2018/03/dallas_mavericks_logo.png",
+        "image_away":"https://toppng.com/uploads/preview/download-brooklyn-nets-vector-logo-11573942208mwqjvdaggt.png",
+        "home_score": "117",
+        "away_score": "114",
+        "status": "Final",
+        "time": "Mon, May 3"
+    },
+    {
+        "match_id": 4,
+        "home_team": "Bucks",
+        "away_team": "Nets",
+        "image_home": "https://cdn.freelogovectors.net/wp-content/uploads/2020/03/milwaukee-bucks-logo.png",
+        "image_away":"https://toppng.com/uploads/preview/download-brooklyn-nets-vector-logo-11573942208mwqjvdaggt.png",
+        "home_score": "124",
+        "away_score": "118",
+        "status": "Final",
+        "time": "wed, May 5"
+    },
+    {
+        "match_id": 5,
+        "home_team": "Mavericks",
+        "away_team": "Nets",
+        "image_home": "https://image.emojipng.com/207/10434207.jpg",
+        "image_away":"https://toppng.com/uploads/preview/download-brooklyn-nets-vector-logo-11573942208mwqjvdaggt.png",
+        "home_score": "113",
+        "away_score": "109",
+        "status": "Final",
+        "time": "Fri, May 7"
+    },
+]
+
+export const nets_players = [
+    {
+        "player_id": 1,
+        "name": "Kevin Durant",
+        "position": "Power forward",
+        "team": "Nets"
+    },
+    {
+        "player_id": 2,
+        "name": "James Hardens",
+        "position": "Point Guard",
+        "team": "Nets"
+    },
+    {
+        "player_id": 3,
+        "name": "Kyrie Irving",
+        "position": "Point Guard",
+        "team": "Nets"
+    },
+    {
+        "player_id": 4,
+        "name": "Blake Griffin",
+        "position": "Power forward",
+        "team": "Nets"
+    },
+    {
+        "player_id": 5,
+        "name": "Joe Harris",
+        "position": "Shooting forward",
+        "team": "Nets"
+    },
+]
