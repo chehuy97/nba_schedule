@@ -1,14 +1,38 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
-import { players } from '../../mock/DummyData'
+import { players, nets_players } from '../../mock/DummyData'
 import styles from './PlayerStyles'
 import { WebView } from 'react-native-webview'
+import { useSelector } from 'react-redux';
+import { chooseTeam } from '../../actions/TeamActions'
 
 const PlayerScreen = ({ navigation }) => {
+
+  const team = useSelector(state => state)
+  // const dispatch = useDispatch()
+  // const chooseTeam = team => dispatch(chooseTeam(team))
+  const [data, setData] = useState(null)
+
+  useEffect(() => {
+    console.log("Team in player is " + team.club_name);
+    setData(show_team_player())
+    console.log(data);
+  })
 
   const show_webview_player = name => {
     console.log("click webview");
     navigation.navigate('PlayerWebView',{name: name})
+  }
+
+  const show_team_player = () => {
+    console.log("Show player");
+    switch(team.club_name) {
+      case "Nets":
+        return nets_players
+      default:
+        return players  
+
+    }
   }
 
   const renderPlayer = item => {
@@ -36,7 +60,7 @@ const PlayerScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={players}
+        data={data}
         renderItem={({ item }) => renderPlayer(item)}
         numColumns={3}
         keyExtractor={item => item.player_id} />

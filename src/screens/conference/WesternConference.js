@@ -17,7 +17,7 @@ const WesternConference = () => {
                 <View style={Styles.club_container}>
                     <Image
                         style={Styles.logo_size}
-                        source={{uri: item.image}} />
+                        source={require('../../assets/images/club_logo/nets_logo.png')} />
                     <Text>{item.club_name}</Text>
                 </View>
                 <Text style={Styles.title_text}>{item.win}</Text>

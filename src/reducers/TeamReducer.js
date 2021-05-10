@@ -6,7 +6,7 @@ const INITIAL_STATE = {
     club_name: 'none'
 }
 
-const club_theme_color = clubName => {
+function  club_theme_color(clubName){
     switch(clubName){
         case 'Nets' :
             return '#000000'
@@ -19,8 +19,8 @@ const teamReducer = ( state = INITIAL_STATE, action) => {
     switch (action.type) {
         case "CHOOSE_TEAM":
             return {
-                app_color: club_theme_color(action.payload.name),
-                club_name: action.payload.name
+                app_color: club_theme_color(action.payload.club_name),
+                club_name: action.payload.club_name
             }
         default:
             return state    

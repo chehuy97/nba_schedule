@@ -10,11 +10,11 @@ const ScheduleCard = ({ data }) => {
       <View style={styles.match_container}>
         <View style={styles.club_container}>
           <View style={styles.club_name_container}>
-            <Image source={{ uri: data.image_home }} style={styles.club_logo} />
+            <Image source={require('../../assets/images/club_logo/nets_logo.png')} style={styles.club_logo} />
             <Text style={styles.match_text}>{data.home_team}</Text>
           </View>
           <View style={styles.club_name_container}>
-            <Image source={{ uri: data.image_away }} style={styles.club_logo} />
+            <Image source={require('../../assets/images/club_logo/rockets_logo.png')} style={styles.club_logo} />
             <Text style={styles.match_text}>{data.away_team}</Text>
           </View>
         </View>

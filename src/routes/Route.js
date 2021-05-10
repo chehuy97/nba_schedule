@@ -1,41 +1,46 @@
 import React, { Component } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import GameScreen from '../screens/games/GameScreen'
-import StandingScreen from '../screens/standing/StandingScreen'
-import StatScreen from '../screens/stats/StatScreen';
-import PlayerScreen from '../screens/players/PlayerScreen';
 import PlayerWebview from '../screens/players/PlayerWebview'
 import color from '../constants/Color'
+import { View, Image } from 'react-native'
+import TopTabRoute from './TopTabRoutes'
 
-const Tab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
 
 const Route = navigation => {
 
-    const playerNavigation = () => {
+    const MyTheme = {
+        ...DefaultTheme,
+        colors: {
+            ...DefaultTheme.colors,
+            primary: 'white',
+        },
+    };
+
+    const app_icon = () => {
         return (
-            <Stack.Navigator>
-                <Stack.Screen name="Player" component={PlayerScreen} />
-                <Stack.Screen name="PlayerWebview" component={PlayerWebview}/>
-            </Stack.Navigator>
+            <View style={{ alignItems: 'flex-end', width: 60 }}>
+                <Image source={require('../assets/images/nba_logo.png')} style={{ width: 20, height: 33 }} />
+            </View>
         )
     }
 
     return (
-        // <NavigationContainer>
-            <Tab.Navigator
-            tabBarOptions={{
-                inactiveTintColor: color.inative_tab,
-                activeTintColor:"white",
-                style: { backgroundColor: color.app_bar },}}>
-                <Tab.Screen name="Games" component={GameScreen} />
-                <Tab.Screen name="Standing" component={StandingScreen} />
-                <Tab.Screen name="Stats" component={StatScreen} />
-                <Tab.Screen name="Players" component={PlayerScreen} />
-            </Tab.Navigator>
-        // </NavigationContainer>
+        <NavigationContainer theme={MyTheme}>
+        <Stack.Navigator
+          screenOptions={{
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: color.app_bar },
+            headerLeft: () => app_icon(),
+          }}>
+          <Stack.Screen
+            style={{ backgroundColor: 'green' }}
+            name="NBP"
+            component={TopTabRoute} />
+          <Stack.Screen name="PlayerWebView" component={PlayerWebview} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
 }
 
