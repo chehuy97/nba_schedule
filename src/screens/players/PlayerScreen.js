@@ -14,18 +14,14 @@ const PlayerScreen = ({ navigation }) => {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    console.log("Team in player is " + team.club_name);
     setData(show_team_player())
-    console.log(data);
   })
 
   const show_webview_player = name => {
-    console.log("click webview");
     navigation.navigate('PlayerWebView',{name: name})
   }
 
   const show_team_player = () => {
-    console.log("Show player");
     switch(team.club_name) {
       case "Nets":
         return nets_players
