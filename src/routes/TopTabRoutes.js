@@ -11,7 +11,7 @@ const Tab = createMaterialTopTabNavigator();
 
 const TopTabRoute = () => {
 
-    const team = useSelector(state => state)
+    const team = useSelector(state => state.TeamReducer)
 
     return (
         <Tab.Navigator

@@ -16,27 +16,12 @@
  import { createStore } from 'redux'
  import teamReducer from './src/reducers/TeamReducer'
  import { Provider } from 'react-redux';
+import RootReducer from './src/reducers/RootReducer';
  
  const Stack = createStackNavigator();
- const store = createStore(teamReducer)
+ const store = createStore(RootReducer)
  
  export default function App() {
- 
-   const MyTheme = {
-     ...DefaultTheme,
-     colors: {
-       ...DefaultTheme.colors,
-       primary: 'white',
-     },
-   };
- 
-   const app_icon = () => {
-     return (
-       <View style={{ alignItems: 'flex-end', width: 60 }}>
-         <Image source={require('./src/assets/images/nba_logo.png')} style={{ width: 20, height: 33 }} />
-       </View>
-     )
-   }
  
    return (
      <Provider store={store}>

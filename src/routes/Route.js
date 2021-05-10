@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 
 const Route = navigation => {
 
-    const team = useSelector(state => state)
+    const team = useSelector(state => state.TeamReducer)
 
     const MyTheme = {
         ...DefaultTheme,

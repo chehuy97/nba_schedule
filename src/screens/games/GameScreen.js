@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 const GameScreen = () => {
 
-  const team = useSelector(state => state)
+  const team = useSelector(state => state.TeamReducer)
   const [data, setData] = useState(null)
 
   useEffect(() => {

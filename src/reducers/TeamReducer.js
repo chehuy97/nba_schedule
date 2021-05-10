@@ -1,4 +1,3 @@
-import { combineReducers } from "redux";
 import Color from "../constants/Color";
 
 const INITIAL_STATE = {

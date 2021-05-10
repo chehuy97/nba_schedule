@@ -7,7 +7,7 @@ import { chooseTeam } from '../../actions/TeamActions'
 
 const EasternConference = () => {
     const [selectedClub, setSelectedClub] = useState(null)
-    const team = useSelector(state => state)
+    const team = useSelector(state => state.TeamReducer)
     const dispatch = useDispatch()
     //const chooseTeam = team => {dispatch(chooseTeam(team))}
 

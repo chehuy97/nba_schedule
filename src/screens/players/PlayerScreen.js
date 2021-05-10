@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect, useState, useReducer } from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import { players, nets_players } from '../../mock/DummyData'
 import styles from './PlayerStyles'
@@ -7,8 +7,7 @@ import { useSelector } from 'react-redux';
 import { chooseTeam } from '../../actions/TeamActions'
 
 const PlayerScreen = ({ navigation }) => {
-
-  const team = useSelector(state => state)
+  const team = useSelector(state => state.TeamReducer)
   // const dispatch = useDispatch()
   // const chooseTeam = team => dispatch(chooseTeam(team))
   const [data, setData] = useState(null)
